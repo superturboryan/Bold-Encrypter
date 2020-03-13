@@ -16,6 +16,7 @@
 		9437BC67241B170900CE36A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437BC66241B170900CE36A9 /* main.m */; };
 		9437BC71241B170900CE36A9 /* Bold_EncrypterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437BC70241B170900CE36A9 /* Bold_EncrypterTests.m */; };
 		9437BC7C241B170900CE36A9 /* Bold_EncrypterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437BC7B241B170900CE36A9 /* Bold_EncrypterUITests.m */; };
+		9437BC8C241B214B00CE36A9 /* PrototypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437BC8B241B214B00CE36A9 /* PrototypeTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		9437BC77241B170900CE36A9 /* Bold EncrypterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bold EncrypterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9437BC7B241B170900CE36A9 /* Bold_EncrypterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bold_EncrypterUITests.m; sourceTree = "<group>"; };
 		9437BC7D241B170900CE36A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9437BC8A241B214B00CE36A9 /* PrototypeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrototypeTableViewCell.h; sourceTree = "<group>"; };
+		9437BC8B241B214B00CE36A9 /* PrototypeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrototypeTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,17 +107,10 @@
 		9437BC53241B170600CE36A9 /* Bold Encrypter */ = {
 			isa = PBXGroup;
 			children = (
-				9437BC54241B170600CE36A9 /* AppDelegate.h */,
-				9437BC55241B170600CE36A9 /* AppDelegate.m */,
-				9437BC57241B170600CE36A9 /* SceneDelegate.h */,
-				9437BC58241B170600CE36A9 /* SceneDelegate.m */,
-				9437BC5A241B170600CE36A9 /* ViewController.h */,
-				9437BC5B241B170600CE36A9 /* ViewController.m */,
-				9437BC5D241B170600CE36A9 /* Main.storyboard */,
-				9437BC60241B170900CE36A9 /* Assets.xcassets */,
-				9437BC62241B170900CE36A9 /* LaunchScreen.storyboard */,
+				9437BC8D241B215800CE36A9 /* View */,
+				9437BC8E241B216200CE36A9 /* Cell */,
+				9437BC89241B205300CE36A9 /* Config Files */,
 				9437BC65241B170900CE36A9 /* Info.plist */,
-				9437BC66241B170900CE36A9 /* main.m */,
 			);
 			path = "Bold Encrypter";
 			sourceTree = "<group>";
@@ -135,6 +131,39 @@
 				9437BC7D241B170900CE36A9 /* Info.plist */,
 			);
 			path = "Bold EncrypterUITests";
+			sourceTree = "<group>";
+		};
+		9437BC89241B205300CE36A9 /* Config Files */ = {
+			isa = PBXGroup;
+			children = (
+				9437BC54241B170600CE36A9 /* AppDelegate.h */,
+				9437BC55241B170600CE36A9 /* AppDelegate.m */,
+				9437BC57241B170600CE36A9 /* SceneDelegate.h */,
+				9437BC58241B170600CE36A9 /* SceneDelegate.m */,
+				9437BC60241B170900CE36A9 /* Assets.xcassets */,
+				9437BC62241B170900CE36A9 /* LaunchScreen.storyboard */,
+				9437BC66241B170900CE36A9 /* main.m */,
+			);
+			path = "Config Files";
+			sourceTree = "<group>";
+		};
+		9437BC8D241B215800CE36A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9437BC5A241B170600CE36A9 /* ViewController.h */,
+				9437BC5B241B170600CE36A9 /* ViewController.m */,
+				9437BC5D241B170600CE36A9 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9437BC8E241B216200CE36A9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9437BC8A241B214B00CE36A9 /* PrototypeTableViewCell.h */,
+				9437BC8B241B214B00CE36A9 /* PrototypeTableViewCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9437BC5C241B170600CE36A9 /* ViewController.m in Sources */,
+				9437BC8C241B214B00CE36A9 /* PrototypeTableViewCell.m in Sources */,
 				9437BC56241B170600CE36A9 /* AppDelegate.m in Sources */,
 				9437BC67241B170900CE36A9 /* main.m in Sources */,
 				9437BC59241B170600CE36A9 /* SceneDelegate.m in Sources */,
