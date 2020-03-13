@@ -107,10 +107,11 @@
 		9437BC53241B170600CE36A9 /* Bold Encrypter */ = {
 			isa = PBXGroup;
 			children = (
-				9437BC8D241B215800CE36A9 /* View */,
+				9437BC8D241B215800CE36A9 /* DemoViewController */,
 				9437BC8E241B216200CE36A9 /* Cell */,
 				9437BC89241B205300CE36A9 /* Config Files */,
 				9437BC65241B170900CE36A9 /* Info.plist */,
+				9437BC5D241B170600CE36A9 /* Main.storyboard */,
 			);
 			path = "Bold Encrypter";
 			sourceTree = "<group>";
@@ -147,14 +148,13 @@
 			path = "Config Files";
 			sourceTree = "<group>";
 		};
-		9437BC8D241B215800CE36A9 /* View */ = {
+		9437BC8D241B215800CE36A9 /* DemoViewController */ = {
 			isa = PBXGroup;
 			children = (
 				9437BC5A241B170600CE36A9 /* DemoViewController.h */,
 				9437BC5B241B170600CE36A9 /* DemoViewController.m */,
-				9437BC5D241B170600CE36A9 /* Main.storyboard */,
 			);
-			path = View;
+			path = DemoViewController;
 			sourceTree = "<group>";
 		};
 		9437BC8E241B216200CE36A9 /* Cell */ = {

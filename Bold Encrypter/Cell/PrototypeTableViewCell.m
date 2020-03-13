@@ -12,13 +12,11 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
-    self.mainLabel.font = [UIFont fontWithName:@"Avenir-Light" size:16.0];
+    self.mainLabel.font = [UIFont fontWithName:@"Avenir-Light" size:16.0]; // Default cell font
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
 }
 
 @end

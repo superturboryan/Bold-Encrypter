@@ -107,28 +107,33 @@ static NSString *kBig = @"??";
     return decryptedString;
 }
 
--(NSMutableAttributedString*)checkForKeys:(NSArray<NSString*>*)keys inEncryptedString:(NSString*)input {
+-(NSAttributedString*)checkForKeys:(NSArray<NSString*>*)keys inEncryptedString:(NSString*)input {
     
-    NSMutableArray<NSArray*>* rangesToStyle = [NSMutableArray array];
+    NSMutableArray<NSArray*>* rangesToStyle = [NSMutableArray array]; // Initialize array of styles to apply after searching and removing keys from input
     
     for (NSString *key in keys) {
     
-        while ([input containsString:key]) {
+        while ([input containsString:key]) { // Find and remove all duplicates of keys, recording their ranges
             
             NSRange firstRange = [input rangeOfString:key]; // Find first key
             
-            NSMutableArray *otherKeys = [keys mutableCopy]; // Get all other keys by removing current one
-            [otherKeys removeObject:key];
+            if (firstRange.length == 0) {
+                NSLog(@"INVALID KEY COUNT IN INPUT, ABORTING STYLING");
+                return [[NSAttributedString alloc] initWithString:@"Invalid key count in input!"];
+            }
+            
+            NSMutableArray *otherKeys = [keys mutableCopy]; // Get all other keys
+            [otherKeys removeObject:key]; // By removing current one
 
             NSUInteger otherKeysFoundBefore = 0, length = firstRange.location; // Count other keys found before current key
 
             for (NSString *otherKey in otherKeys) {
-                NSRange range = NSMakeRange(0, length);
+                NSRange range = NSMakeRange(0, length); // Search string for all occurrences before current key
                 while (range.location != NSNotFound) {
                     range = [input rangeOfString:otherKey options:0 range:range];
                     if (range.location != NSNotFound) {
                         range = NSMakeRange(range.location + range.length, length - (range.location + range.length));
-                        otherKeysFoundBefore++;
+                        otherKeysFoundBefore++; // Key found, continue search after current find
                     }
                 }
             }
@@ -136,6 +141,12 @@ static NSString *kBig = @"??";
             input = [input stringByReplacingCharactersInRange:firstRange withString:@""]; // Remove substring with first key
             
             NSRange secondRange = [input rangeOfString:key]; // Find second key
+            
+            if (secondRange.length == 0) {
+                NSLog(@"INVALID KEY COUNT IN INPUT, ABORTING STYLING");
+                return [[NSAttributedString alloc] initWithString:@"Invalid key count in input!"];
+            }
+            
             input = [input stringByReplacingCharactersInRange:secondRange withString:@""]; // Remove substring with second key
             
             NSRange styleRange = NSMakeRange(firstRange.location + 2,  secondRange.location - firstRange.location); // Create style range from two key ranges
