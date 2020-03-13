@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,128 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jUo-Gh-WMN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qWX-gT-XDT">
+                                <rect key="frame" x="20" y="76" width="335" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="KvD-k5-w98"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="YHm-Ax-hDf">
+                                <rect key="frame" x="137.5" y="130" width="100" height="40"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TCI-3R-tc4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="cVD-B7-des"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="Boldify">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CB7-du-04d">
+                                <rect key="frame" x="20" y="20" width="335" height="36"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Enter text into the box below using 
+** </string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="15"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="double stars">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name=".AppleSystemUIFontEmphasized"/>
+                                            <font key="NSOriginalFont" size="15" name=".AppleSystemUIFontEmphasized"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ** to ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="15"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="boldify">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name=".AppleSystemUIFontEmphasized"/>
+                                            <font key="NSOriginalFont" size="15" name=".AppleSystemUIFontEmphasized"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" the output!">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="15"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TnQ-BH-tBy">
+                                <rect key="frame" x="20" y="190" width="335" height="457"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="boldCell" textLabel="6nA-Hg-4rd" style="IBUITableViewCellStyleDefault" id="tYR-vU-J5d">
+                                        <rect key="frame" x="0.0" y="28" width="335" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tYR-vU-J5d" id="rD4-ld-dEW">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Output created here as cells" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6nA-Hg-4rd">
+                                                    <rect key="frame" x="15" y="0.0" width="305" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qWX-gT-XDT" secondAttribute="trailing" constant="20" id="C3p-KC-VZR"/>
+                            <constraint firstItem="TnQ-BH-tBy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EPo-gM-Rgp"/>
+                            <constraint firstItem="CB7-du-04d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="J1s-cH-oyV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TnQ-BH-tBy" secondAttribute="bottom" constant="20" id="Jba-E5-Jpb"/>
+                            <constraint firstItem="CB7-du-04d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ShB-R5-BAG"/>
+                            <constraint firstItem="YHm-Ax-hDf" firstAttribute="top" secondItem="qWX-gT-XDT" secondAttribute="bottom" constant="20" id="cdb-0Q-8oq"/>
+                            <constraint firstItem="qWX-gT-XDT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="chA-xU-VVi"/>
+                            <constraint firstItem="YHm-Ax-hDf" firstAttribute="centerX" secondItem="qWX-gT-XDT" secondAttribute="centerX" id="deq-xb-CKb"/>
+                            <constraint firstItem="qWX-gT-XDT" firstAttribute="top" secondItem="CB7-du-04d" secondAttribute="bottom" constant="20" id="jOe-eb-ATk"/>
+                            <constraint firstItem="jUo-Gh-WMN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mUW-Rt-32j"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jUo-Gh-WMN" secondAttribute="bottom" id="rka-uJ-X5Y"/>
+                            <constraint firstAttribute="trailing" secondItem="CB7-du-04d" secondAttribute="trailing" constant="20" id="rzD-qe-oQL"/>
+                            <constraint firstItem="jUo-Gh-WMN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="sYe-MF-IEL"/>
+                            <constraint firstItem="TnQ-BH-tBy" firstAttribute="top" secondItem="YHm-Ax-hDf" secondAttribute="bottom" constant="20" id="v08-Yh-v6Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jUo-Gh-WMN" secondAttribute="trailing" id="w0i-Qy-Km2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TnQ-BH-tBy" secondAttribute="trailing" constant="20" id="xcr-sq-JrI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="boldifyButton" destination="YHm-Ax-hDf" id="KQN-tH-zAW"/>
+                        <outlet property="tableView" destination="TnQ-BH-tBy" id="Kqb-LL-w4K"/>
+                        <outlet property="textField" destination="qWX-gT-XDT" id="Hic-ef-5C2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="138"/>
         </scene>
     </scenes>
 </document>
