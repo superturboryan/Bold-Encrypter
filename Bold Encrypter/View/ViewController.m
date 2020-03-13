@@ -137,9 +137,9 @@
             
             NSRange styleRange = NSMakeRange(firstRange.location + 2,  secondRange.location - firstRange.location); // Create style range
             
-            NSUInteger locationWithOtherKeysSubtracted = styleRange.location-2-(2*otherKeysFoundBefore);
+            NSUInteger locationWithOtherKeysSubtracted = styleRange.location-2-(2*otherKeysFoundBefore); // Find true location to style
             
-            [rangesToStyle addObject: @[@(locationWithOtherKeysSubtracted), @(styleRange.length), key]]; // Add to ranges to style
+            [rangesToStyle addObject: @[@(locationWithOtherKeysSubtracted), @(styleRange.length), key]]; // Add custom range object with key to styling array
         }
     }
     
