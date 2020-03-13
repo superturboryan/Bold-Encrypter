@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9437BC56241B170600CE36A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437BC55241B170600CE36A9 /* AppDelegate.m */; };
+		9437BC59241B170600CE36A9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437BC58241B170600CE36A9 /* SceneDelegate.m */; };
+		9437BC5C241B170600CE36A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437BC5B241B170600CE36A9 /* ViewController.m */; };
+		9437BC5F241B170600CE36A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9437BC5D241B170600CE36A9 /* Main.storyboard */; };
+		9437BC61241B170900CE36A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9437BC60241B170900CE36A9 /* Assets.xcassets */; };
+		9437BC64241B170900CE36A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9437BC62241B170900CE36A9 /* LaunchScreen.storyboard */; };
+		9437BC67241B170900CE36A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437BC66241B170900CE36A9 /* main.m */; };
+		9437BC71241B170900CE36A9 /* Bold_EncrypterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437BC70241B170900CE36A9 /* Bold_EncrypterTests.m */; };
+		9437BC7C241B170900CE36A9 /* Bold_EncrypterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437BC7B241B170900CE36A9 /* Bold_EncrypterUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9437BC6D241B170900CE36A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9437BC49241B170600CE36A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9437BC50241B170600CE36A9;
+			remoteInfo = "Bold Encrypter";
+		};
+		9437BC78241B170900CE36A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9437BC49241B170600CE36A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9437BC50241B170600CE36A9;
+			remoteInfo = "Bold Encrypter";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9437BC51241B170600CE36A9 /* Bold Encrypter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bold Encrypter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9437BC54241B170600CE36A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9437BC55241B170600CE36A9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9437BC57241B170600CE36A9 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		9437BC58241B170600CE36A9 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		9437BC5A241B170600CE36A9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9437BC5B241B170600CE36A9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9437BC5E241B170600CE36A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9437BC60241B170900CE36A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9437BC63241B170900CE36A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9437BC65241B170900CE36A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9437BC66241B170900CE36A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9437BC6C241B170900CE36A9 /* Bold EncrypterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bold EncrypterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9437BC70241B170900CE36A9 /* Bold_EncrypterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bold_EncrypterTests.m; sourceTree = "<group>"; };
+		9437BC72241B170900CE36A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9437BC77241B170900CE36A9 /* Bold EncrypterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bold EncrypterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9437BC7B241B170900CE36A9 /* Bold_EncrypterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bold_EncrypterUITests.m; sourceTree = "<group>"; };
+		9437BC7D241B170900CE36A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9437BC4E241B170600CE36A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9437BC69241B170900CE36A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9437BC74241B170900CE36A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9437BC48241B170600CE36A9 = {
+			isa = PBXGroup;
+			children = (
+				9437BC53241B170600CE36A9 /* Bold Encrypter */,
+				9437BC6F241B170900CE36A9 /* Bold EncrypterTests */,
+				9437BC7A241B170900CE36A9 /* Bold EncrypterUITests */,
+				9437BC52241B170600CE36A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9437BC52241B170600CE36A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9437BC51241B170600CE36A9 /* Bold Encrypter.app */,
+				9437BC6C241B170900CE36A9 /* Bold EncrypterTests.xctest */,
+				9437BC77241B170900CE36A9 /* Bold EncrypterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9437BC53241B170600CE36A9 /* Bold Encrypter */ = {
+			isa = PBXGroup;
+			children = (
+				9437BC54241B170600CE36A9 /* AppDelegate.h */,
+				9437BC55241B170600CE36A9 /* AppDelegate.m */,
+				9437BC57241B170600CE36A9 /* SceneDelegate.h */,
+				9437BC58241B170600CE36A9 /* SceneDelegate.m */,
+				9437BC5A241B170600CE36A9 /* ViewController.h */,
+				9437BC5B241B170600CE36A9 /* ViewController.m */,
+				9437BC5D241B170600CE36A9 /* Main.storyboard */,
+				9437BC60241B170900CE36A9 /* Assets.xcassets */,
+				9437BC62241B170900CE36A9 /* LaunchScreen.storyboard */,
+				9437BC65241B170900CE36A9 /* Info.plist */,
+				9437BC66241B170900CE36A9 /* main.m */,
+			);
+			path = "Bold Encrypter";
+			sourceTree = "<group>";
+		};
+		9437BC6F241B170900CE36A9 /* Bold EncrypterTests */ = {
+			isa = PBXGroup;
+			children = (
+				9437BC70241B170900CE36A9 /* Bold_EncrypterTests.m */,
+				9437BC72241B170900CE36A9 /* Info.plist */,
+			);
+			path = "Bold EncrypterTests";
+			sourceTree = "<group>";
+		};
+		9437BC7A241B170900CE36A9 /* Bold EncrypterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9437BC7B241B170900CE36A9 /* Bold_EncrypterUITests.m */,
+				9437BC7D241B170900CE36A9 /* Info.plist */,
+			);
+			path = "Bold EncrypterUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9437BC50241B170600CE36A9 /* Bold Encrypter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9437BC80241B170900CE36A9 /* Build configuration list for PBXNativeTarget "Bold Encrypter" */;
+			buildPhases = (
+				9437BC4D241B170600CE36A9 /* Sources */,
+				9437BC4E241B170600CE36A9 /* Frameworks */,
+				9437BC4F241B170600CE36A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bold Encrypter";
+			productName = "Bold Encrypter";
+			productReference = 9437BC51241B170600CE36A9 /* Bold Encrypter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9437BC6B241B170900CE36A9 /* Bold EncrypterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9437BC83241B170900CE36A9 /* Build configuration list for PBXNativeTarget "Bold EncrypterTests" */;
+			buildPhases = (
+				9437BC68241B170900CE36A9 /* Sources */,
+				9437BC69241B170900CE36A9 /* Frameworks */,
+				9437BC6A241B170900CE36A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9437BC6E241B170900CE36A9 /* PBXTargetDependency */,
+			);
+			name = "Bold EncrypterTests";
+			productName = "Bold EncrypterTests";
+			productReference = 9437BC6C241B170900CE36A9 /* Bold EncrypterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9437BC76241B170900CE36A9 /* Bold EncrypterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9437BC86241B170900CE36A9 /* Build configuration list for PBXNativeTarget "Bold EncrypterUITests" */;
+			buildPhases = (
+				9437BC73241B170900CE36A9 /* Sources */,
+				9437BC74241B170900CE36A9 /* Frameworks */,
+				9437BC75241B170900CE36A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9437BC79241B170900CE36A9 /* PBXTargetDependency */,
+			);
+			name = "Bold EncrypterUITests";
+			productName = "Bold EncrypterUITests";
+			productReference = 9437BC77241B170900CE36A9 /* Bold EncrypterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9437BC49241B170600CE36A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Ryan David Forsyth";
+				TargetAttributes = {
+					9437BC50241B170600CE36A9 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					9437BC6B241B170900CE36A9 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 9437BC50241B170600CE36A9;
+					};
+					9437BC76241B170900CE36A9 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 9437BC50241B170600CE36A9;
+					};
+				};
+			};
+			buildConfigurationList = 9437BC4C241B170600CE36A9 /* Build configuration list for PBXProject "Bold Encrypter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9437BC48241B170600CE36A9;
+			productRefGroup = 9437BC52241B170600CE36A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9437BC50241B170600CE36A9 /* Bold Encrypter */,
+				9437BC6B241B170900CE36A9 /* Bold EncrypterTests */,
+				9437BC76241B170900CE36A9 /* Bold EncrypterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9437BC4F241B170600CE36A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9437BC64241B170900CE36A9 /* LaunchScreen.storyboard in Resources */,
+				9437BC61241B170900CE36A9 /* Assets.xcassets in Resources */,
+				9437BC5F241B170600CE36A9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9437BC6A241B170900CE36A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9437BC75241B170900CE36A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9437BC4D241B170600CE36A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9437BC5C241B170600CE36A9 /* ViewController.m in Sources */,
+				9437BC56241B170600CE36A9 /* AppDelegate.m in Sources */,
+				9437BC67241B170900CE36A9 /* main.m in Sources */,
+				9437BC59241B170600CE36A9 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9437BC68241B170900CE36A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9437BC71241B170900CE36A9 /* Bold_EncrypterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9437BC73241B170900CE36A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9437BC7C241B170900CE36A9 /* Bold_EncrypterUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9437BC6E241B170900CE36A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9437BC50241B170600CE36A9 /* Bold Encrypter */;
+			targetProxy = 9437BC6D241B170900CE36A9 /* PBXContainerItemProxy */;
+		};
+		9437BC79241B170900CE36A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9437BC50241B170600CE36A9 /* Bold Encrypter */;
+			targetProxy = 9437BC78241B170900CE36A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9437BC5D241B170600CE36A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9437BC5E241B170600CE36A9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9437BC62241B170900CE36A9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9437BC63241B170900CE36A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9437BC7E241B170900CE36A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9437BC7F241B170900CE36A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9437BC81241B170900CE36A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T6MXF72738;
+				INFOPLIST_FILE = "Bold Encrypter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RyanDF.Bold-Encrypter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9437BC82241B170900CE36A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T6MXF72738;
+				INFOPLIST_FILE = "Bold Encrypter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RyanDF.Bold-Encrypter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9437BC84241B170900CE36A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T6MXF72738;
+				INFOPLIST_FILE = "Bold EncrypterTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RyanDF.Bold-EncrypterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bold Encrypter.app/Bold Encrypter";
+			};
+			name = Debug;
+		};
+		9437BC85241B170900CE36A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T6MXF72738;
+				INFOPLIST_FILE = "Bold EncrypterTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RyanDF.Bold-EncrypterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bold Encrypter.app/Bold Encrypter";
+			};
+			name = Release;
+		};
+		9437BC87241B170900CE36A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T6MXF72738;
+				INFOPLIST_FILE = "Bold EncrypterUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RyanDF.Bold-EncrypterUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Bold Encrypter";
+			};
+			name = Debug;
+		};
+		9437BC88241B170900CE36A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T6MXF72738;
+				INFOPLIST_FILE = "Bold EncrypterUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RyanDF.Bold-EncrypterUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Bold Encrypter";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9437BC4C241B170600CE36A9 /* Build configuration list for PBXProject "Bold Encrypter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9437BC7E241B170900CE36A9 /* Debug */,
+				9437BC7F241B170900CE36A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9437BC80241B170900CE36A9 /* Build configuration list for PBXNativeTarget "Bold Encrypter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9437BC81241B170900CE36A9 /* Debug */,
+				9437BC82241B170900CE36A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9437BC83241B170900CE36A9 /* Build configuration list for PBXNativeTarget "Bold EncrypterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9437BC84241B170900CE36A9 /* Debug */,
+				9437BC85241B170900CE36A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9437BC86241B170900CE36A9 /* Build configuration list for PBXNativeTarget "Bold EncrypterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9437BC87241B170900CE36A9 /* Debug */,
+				9437BC88241B170900CE36A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9437BC49241B170600CE36A9 /* Project object */;
+}
