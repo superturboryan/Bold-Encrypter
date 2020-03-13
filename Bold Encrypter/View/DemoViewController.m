@@ -6,21 +6,21 @@
 //  Copyright © 2020 Ryan David Forsyth. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "DemoViewController.h"
 #import "PrototypeTableViewCell.h"
 
-/*Private */@interface ViewController ()
+/*Private */@interface DemoViewController ()
 <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
-@property (weak, nonatomic) IBOutlet UIButton *boldifyButton;
+@property (weak, nonatomic) IBOutlet UIButton *stylizeButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong,nonatomic) NSMutableArray <NSAttributedString*>* stringsToDisplay;
 
 @end
 
-@implementation ViewController
+@implementation DemoViewController
 
 //MARK: Setup
 - (void)viewDidLoad {
@@ -40,6 +40,8 @@
     self.textField.layer.cornerRadius = 10.0;
     self.textField.layer.borderColor = UIColor.systemIndigoColor.CGColor;
     self.textField.layer.borderWidth = 2.0;
+    
+    self.stylizeButton.layer.cornerRadius = 5.0;
 }
 
 //MARK: Delegates
@@ -98,7 +100,7 @@
     
     NSMutableAttributedString *decryptedString = [[NSMutableAttributedString alloc]initWithString:input];
     
-    decryptedString = [self checkForKeys:@[@"!!",@"//",@"??"] inEncryptedString: decryptedString];
+    decryptedString = [self checkForKeys:[self styleKeys] inEncryptedString: decryptedString];
     
     return decryptedString;
 }
@@ -114,10 +116,10 @@
             
             NSRange firstRange = [modified rangeOfString:key]; // Find first key
             
-            NSMutableArray *otherKeys = [keys mutableCopy]; // LOGIC ONLY WORKS FOR 2 KEY COMBINATIONS
+            NSMutableArray *otherKeys = [keys mutableCopy]; // Get all other keys and remove current one
             [otherKeys removeObject:key];
 
-            NSUInteger otherKeysFoundBefore = 0, length = firstRange.location; // Count other keys found before
+            NSUInteger otherKeysFoundBefore = 0, length = firstRange.location; // Count other keys found before current key
 
             for (NSString *otherKey in otherKeys) {
                 NSRange range = NSMakeRange(0, length);
@@ -130,10 +132,10 @@
                 }
             }
             
-            modified = [modified stringByReplacingCharactersInRange:firstRange withString:@""]; // Remove
+            modified = [modified stringByReplacingCharactersInRange:firstRange withString:@""]; // Remove substring with first key
             
             NSRange secondRange = [modified rangeOfString:key]; // Find second key
-            modified = [modified stringByReplacingCharactersInRange:secondRange withString:@""]; // Remove
+            modified = [modified stringByReplacingCharactersInRange:secondRange withString:@""]; // Remove substring with second key
             
             NSRange styleRange = NSMakeRange(firstRange.location + 2,  secondRange.location - firstRange.location); // Create style range
             
@@ -152,6 +154,10 @@
     }
     
     return stringBuilder;
+}
+
+-(NSArray<NSString*>*)styleKeys {
+    return @[@"!!",@"//",@"??"];
 }
 
 -(UIFont*)getFontForKey:(NSString*)key {
