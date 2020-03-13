@@ -22,6 +22,10 @@
 
 @implementation DemoViewController
 
+static NSString *kBold = @"!!";
+static NSString *kItalic = @"//";
+static NSString *kBig = @"??";
+
 //MARK: Setup
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -98,54 +102,51 @@
 
 -(NSAttributedString*)getFormattedStringFromEncryptedString:(NSString*)input {
     
-    NSMutableAttributedString *decryptedString = [[NSMutableAttributedString alloc]initWithString:input];
-    
-    decryptedString = [self checkForKeys:[self styleKeys] inEncryptedString: decryptedString];
+    NSAttributedString *decryptedString = [self checkForKeys:[self styleKeys] inEncryptedString: input];
     
     return decryptedString;
 }
 
--(NSMutableAttributedString*)checkForKeys:(NSArray<NSString*>*)keys inEncryptedString:(NSMutableAttributedString*)input {
+-(NSMutableAttributedString*)checkForKeys:(NSArray<NSString*>*)keys inEncryptedString:(NSString*)input {
     
-    NSString *modified = [input string];
     NSMutableArray<NSArray*>* rangesToStyle = [NSMutableArray array];
     
     for (NSString *key in keys) {
     
-        while ([modified containsString:key]) {
+        while ([input containsString:key]) {
             
-            NSRange firstRange = [modified rangeOfString:key]; // Find first key
+            NSRange firstRange = [input rangeOfString:key]; // Find first key
             
-            NSMutableArray *otherKeys = [keys mutableCopy]; // Get all other keys and remove current one
+            NSMutableArray *otherKeys = [keys mutableCopy]; // Get all other keys by removing current one
             [otherKeys removeObject:key];
 
             NSUInteger otherKeysFoundBefore = 0, length = firstRange.location; // Count other keys found before current key
 
             for (NSString *otherKey in otherKeys) {
                 NSRange range = NSMakeRange(0, length);
-                while(range.location != NSNotFound) {
-                    range = [modified rangeOfString:otherKey options:0 range:range];
-                    if(range.location != NSNotFound) {
+                while (range.location != NSNotFound) {
+                    range = [input rangeOfString:otherKey options:0 range:range];
+                    if (range.location != NSNotFound) {
                         range = NSMakeRange(range.location + range.length, length - (range.location + range.length));
                         otherKeysFoundBefore++;
                     }
                 }
             }
             
-            modified = [modified stringByReplacingCharactersInRange:firstRange withString:@""]; // Remove substring with first key
+            input = [input stringByReplacingCharactersInRange:firstRange withString:@""]; // Remove substring with first key
             
-            NSRange secondRange = [modified rangeOfString:key]; // Find second key
-            modified = [modified stringByReplacingCharactersInRange:secondRange withString:@""]; // Remove substring with second key
+            NSRange secondRange = [input rangeOfString:key]; // Find second key
+            input = [input stringByReplacingCharactersInRange:secondRange withString:@""]; // Remove substring with second key
             
-            NSRange styleRange = NSMakeRange(firstRange.location + 2,  secondRange.location - firstRange.location); // Create style range
+            NSRange styleRange = NSMakeRange(firstRange.location + 2,  secondRange.location - firstRange.location); // Create style range from two key ranges
             
-            NSUInteger locationWithOtherKeysSubtracted = styleRange.location-2-(2*otherKeysFoundBefore); // Find true location to style
+            NSUInteger locationWithOtherKeysSubtracted = styleRange.location - 2 - (2*otherKeysFoundBefore); // Find true location to style by ignoring other keys
             
             [rangesToStyle addObject: @[@(locationWithOtherKeysSubtracted), @(styleRange.length), key]]; // Add custom range object with key to styling array
         }
     }
     
-    NSMutableAttributedString *stringBuilder = [[NSMutableAttributedString alloc]initWithString:modified];
+    NSMutableAttributedString *stringBuilder = [[NSMutableAttributedString alloc]initWithString:input];
     for (NSArray *range in rangesToStyle) {
         NSUInteger location = [range[0] unsignedIntegerValue];
         NSUInteger length = [range[1] unsignedIntegerValue];
@@ -157,21 +158,20 @@
 }
 
 -(NSArray<NSString*>*)styleKeys {
-    return @[@"!!",@"//",@"??"];
+    return @[kBold,kItalic,kBig];
 }
 
 -(UIFont*)getFontForKey:(NSString*)key {
     
-    if ([key isEqualToString:@"!!"])
-        return [UIFont fontWithName:@"Avenir-Heavy" size:18.0];
+    UIFont *style = [UIFont fontWithName:@"Avenir-Heavy" size:18.0]; // Default?
+     
+    if ([key isEqualToString:kBold]) style = [UIFont fontWithName:@"Avenir-Heavy" size:18.0];
     
-    if ([key isEqualToString:@"//"])
-        return [UIFont italicSystemFontOfSize:18.0];
+    if ([key isEqualToString:kItalic]) style = [UIFont italicSystemFontOfSize:18.0];
     
-    if ([key isEqualToString:@"??"])
-        return [UIFont boldSystemFontOfSize:30.0];
+    if ([key isEqualToString:kBig]) style = [UIFont boldSystemFontOfSize:30.0];
     
-    return [UIFont fontWithName:@"Avenir-Heavy" size:18.0]; // Default?
+    return style;
 }
 
 @end
