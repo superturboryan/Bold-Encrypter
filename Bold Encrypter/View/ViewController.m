@@ -29,7 +29,6 @@
     [self setupView];
     
     self.stringsToDisplay = [NSMutableArray array];
-    [self.stringsToDisplay addObject: [[NSAttributedString alloc]initWithString:@"Test 1 2"]];
 }
 
 -(void)setupView {
@@ -114,20 +113,19 @@
     
     NSMutableAttributedString *stringBuilder = [[NSMutableAttributedString alloc]initWithString:@""];
     
-    BOOL isBold = NO;
+    BOOL applyEffect = NO;
     for (NSString *string in pieces) {
         
-        if (!isBold) {
-            [stringBuilder appendAttributedString: [[NSAttributedString alloc]initWithString:string]];
-        }
-        else {
+        if (applyEffect) {
             NSMutableAttributedString *decryptedPiece = [[NSMutableAttributedString alloc] initWithString:string];
             UIFont *bold = [UIFont fontWithName:@"Avenir-Heavy" size:18.0];
             [decryptedPiece addAttribute:NSFontAttributeName value:bold range:NSMakeRange(0, decryptedPiece.length)];
             [stringBuilder appendAttributedString:decryptedPiece];
         }
+        else
+            [stringBuilder appendAttributedString: [[NSAttributedString alloc]initWithString:string]];
         
-        isBold = !isBold;
+        applyEffect = !applyEffect; // Switch toggle
     }
     
     return stringBuilder;
