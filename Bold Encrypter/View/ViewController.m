@@ -9,8 +9,7 @@
 #import "ViewController.h"
 #import "PrototypeTableViewCell.h"
 
-//MARK: Private
-@interface ViewController ()
+/*Private */@interface ViewController ()
 <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -70,13 +69,13 @@
 }
 
 //MARK: Actions
-- (IBAction)boldifyTapped:(id)sender {
-    [self boldifyMessageInTextField];
+- (IBAction)boldifyTapped:(id)_ {
+    [self interpretMessageInTextField];
     [self.tableView reloadData];
 }
 
 //MARK: Business logic
--(void)boldifyMessageInTextField {
+-(void)interpretMessageInTextField {
     
     NSString *input = [NSString stringWithFormat:@"%@",self.textField.text];
     
@@ -99,37 +98,74 @@
     
     NSMutableAttributedString *decryptedString = [[NSMutableAttributedString alloc]initWithString:input];
     
-    decryptedString = [self checkForKey:@"**" inEncryptedString: decryptedString];
+    decryptedString = [self checkForKeys:@[@"!!",@"//",@"??"] inEncryptedString: decryptedString];
     
     return decryptedString;
 }
 
--(NSMutableAttributedString*)checkForKey:(NSString*)key inEncryptedString:(NSMutableAttributedString*)input {
+-(NSMutableAttributedString*)checkForKeys:(NSArray<NSString*>*)keys inEncryptedString:(NSMutableAttributedString*)input {
     
-    NSMutableArray<NSString*>* pieces = [[[input string] componentsSeparatedByString:key]mutableCopy];
+    NSString *modified = [input string];
+    NSMutableArray<NSArray*>* rangesToStyle = [NSMutableArray array];
     
-    if (pieces.count == 1)
-        return input; // No bold markers found
+    for (NSString *key in keys) {
     
-    NSMutableAttributedString *stringBuilder = [[NSMutableAttributedString alloc]initWithString:@""];
-    
-    BOOL applyEffect = NO;
-    for (NSString *string in pieces) {
-        
-        if (applyEffect) {
-            NSMutableAttributedString *decryptedPiece = [[NSMutableAttributedString alloc] initWithString:string];
-            UIFont *bold = [UIFont fontWithName:@"Avenir-Heavy" size:18.0];
-            [decryptedPiece addAttribute:NSFontAttributeName value:bold range:NSMakeRange(0, decryptedPiece.length)];
-            [stringBuilder appendAttributedString:decryptedPiece];
+        while ([modified containsString:key]) {
+            
+            NSRange firstRange = [modified rangeOfString:key]; // Find first key
+            
+            NSMutableArray *otherKeys = [keys mutableCopy]; // LOGIC ONLY WORKS FOR 2 KEY COMBINATIONS
+            [otherKeys removeObject:key];
+
+            NSUInteger otherKeysFoundBefore = 0, length = firstRange.location; // Count other keys found before
+
+            for (NSString *otherKey in otherKeys) {
+                NSRange range = NSMakeRange(0, length);
+                while(range.location != NSNotFound) {
+                    range = [modified rangeOfString:otherKey options:0 range:range];
+                    if(range.location != NSNotFound) {
+                        range = NSMakeRange(range.location + range.length, length - (range.location + range.length));
+                        otherKeysFoundBefore++;
+                    }
+                }
+            }
+            
+            modified = [modified stringByReplacingCharactersInRange:firstRange withString:@""]; // Remove
+            
+            NSRange secondRange = [modified rangeOfString:key]; // Find second key
+            modified = [modified stringByReplacingCharactersInRange:secondRange withString:@""]; // Remove
+            
+            NSRange styleRange = NSMakeRange(firstRange.location + 2,  secondRange.location - firstRange.location); // Create style range
+            
+            NSUInteger locationWithOtherKeysSubtracted = styleRange.location-2-(2*otherKeysFoundBefore);
+            
+            [rangesToStyle addObject: @[@(locationWithOtherKeysSubtracted), @(styleRange.length), key]]; // Add to ranges to style
         }
-        else
-            [stringBuilder appendAttributedString: [[NSAttributedString alloc]initWithString:string]];
-        
-        applyEffect = !applyEffect; // Switch toggle
+    }
+    
+    NSMutableAttributedString *stringBuilder = [[NSMutableAttributedString alloc]initWithString:modified];
+    for (NSArray *range in rangesToStyle) {
+        NSUInteger location = [range[0] unsignedIntegerValue];
+        NSUInteger length = [range[1] unsignedIntegerValue];
+        NSString *key = [NSString stringWithFormat:@"%@",range[2]];
+        [stringBuilder addAttributes: @{NSFontAttributeName : [self getFontForKey:key]} range: NSMakeRange(location, length)];
     }
     
     return stringBuilder;
 }
 
+-(UIFont*)getFontForKey:(NSString*)key {
+    
+    if ([key isEqualToString:@"!!"])
+        return [UIFont fontWithName:@"Avenir-Heavy" size:18.0];
+    
+    if ([key isEqualToString:@"//"])
+        return [UIFont italicSystemFontOfSize:18.0];
+    
+    if ([key isEqualToString:@"??"])
+        return [UIFont boldSystemFontOfSize:30.0];
+    
+    return [UIFont fontWithName:@"Avenir-Heavy" size:18.0]; // Default?
+}
 
 @end
