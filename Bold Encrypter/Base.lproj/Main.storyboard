@@ -39,7 +39,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="boldifyTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pyo-wa-bP5"/>
+                                    <action selector="stylizeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pyo-wa-bP5"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CB7-du-04d">
@@ -53,6 +53,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TnQ-BH-tBy">
                                 <rect key="frame" x="20" y="215.5" width="335" height="431.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="boldCell" textLabel="6nA-Hg-4rd" style="IBUITableViewCellStyleDefault" id="tYR-vU-J5d" customClass="PrototypeTableViewCell">
@@ -100,9 +101,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="inputTextField" destination="qWX-gT-XDT" id="Hic-ef-5C2"/>
                         <outlet property="stylizeButton" destination="YHm-Ax-hDf" id="KQN-tH-zAW"/>
                         <outlet property="tableView" destination="TnQ-BH-tBy" id="Kqb-LL-w4K"/>
-                        <outlet property="textField" destination="qWX-gT-XDT" id="Hic-ef-5C2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

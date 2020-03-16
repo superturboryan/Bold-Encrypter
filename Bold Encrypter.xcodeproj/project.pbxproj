@@ -17,6 +17,7 @@
 		9437BC71241B170900CE36A9 /* Bold_EncrypterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437BC70241B170900CE36A9 /* Bold_EncrypterTests.m */; };
 		9437BC7C241B170900CE36A9 /* Bold_EncrypterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437BC7B241B170900CE36A9 /* Bold_EncrypterUITests.m */; };
 		9437BC8C241B214B00CE36A9 /* PrototypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437BC8B241B214B00CE36A9 /* PrototypeTableViewCell.m */; };
+		948999E4241FEFEF00C8D7EB /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 948999E3241FEFEF00C8D7EB /* NSString+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		9437BC7D241B170900CE36A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9437BC8A241B214B00CE36A9 /* PrototypeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrototypeTableViewCell.h; sourceTree = "<group>"; };
 		9437BC8B241B214B00CE36A9 /* PrototypeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrototypeTableViewCell.m; sourceTree = "<group>"; };
+		948999E2241FEFDB00C8D7EB /* NSString+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		948999E3241FEFEF00C8D7EB /* NSString+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,7 @@
 		9437BC53241B170600CE36A9 /* Bold Encrypter */ = {
 			isa = PBXGroup;
 			children = (
+				948999DE241FEEF400C8D7EB /* NSAttributedString Extension */,
 				9437BC8D241B215800CE36A9 /* DemoViewController */,
 				9437BC8E241B216200CE36A9 /* Cell */,
 				9437BC89241B205300CE36A9 /* Config Files */,
@@ -164,6 +168,15 @@
 				9437BC8B241B214B00CE36A9 /* PrototypeTableViewCell.m */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		948999DE241FEEF400C8D7EB /* NSAttributedString Extension */ = {
+			isa = PBXGroup;
+			children = (
+				948999E2241FEFDB00C8D7EB /* NSString+Extension.h */,
+				948999E3241FEFEF00C8D7EB /* NSString+Extension.m */,
+			);
+			path = "NSAttributedString Extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +312,7 @@
 				9437BC5C241B170600CE36A9 /* DemoViewController.m in Sources */,
 				9437BC8C241B214B00CE36A9 /* PrototypeTableViewCell.m in Sources */,
 				9437BC56241B170600CE36A9 /* AppDelegate.m in Sources */,
+				948999E4241FEFEF00C8D7EB /* NSString+Extension.m in Sources */,
 				9437BC67241B170900CE36A9 /* main.m in Sources */,
 				9437BC59241B170600CE36A9 /* SceneDelegate.m in Sources */,
 			);

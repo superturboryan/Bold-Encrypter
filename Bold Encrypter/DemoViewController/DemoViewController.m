@@ -8,11 +8,12 @@
 
 #import "DemoViewController.h"
 #import "PrototypeTableViewCell.h"
+#import "NSString+Extension.h"
 
 /*Private */@interface DemoViewController ()
 <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UITextField *inputTextField;
 @property (weak, nonatomic) IBOutlet UIButton *stylizeButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -35,15 +36,14 @@ static NSString *kBig = @"??";
 }
 
 -(void)setupView {
-    self.textField.delegate = self;
-    self.textField.returnKeyType = UIReturnKeyDone;
-    
+    self.inputTextField.delegate = self;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.textField.layer.cornerRadius = 10.0;
-    self.textField.layer.borderColor = UIColor.systemIndigoColor.CGColor;
-    self.textField.layer.borderWidth = 2.0;
+    self.inputTextField.returnKeyType = UIReturnKeyDone;
+    self.inputTextField.layer.cornerRadius = 10.0;
+    self.inputTextField.layer.borderColor = UIColor.systemIndigoColor.CGColor;
+    self.inputTextField.layer.borderWidth = 2.0;
     
     self.stylizeButton.layer.cornerRadius = 5.0;
 }
@@ -69,13 +69,13 @@ static NSString *kBig = @"??";
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self.textField resignFirstResponder];
-    [self boldifyTapped:nil];
+    [self.inputTextField resignFirstResponder];
+    [self stylizeTapped:nil];
     return YES;
 }
 
 //MARK: Actions
-- (IBAction)boldifyTapped:(id)_ {
+- (IBAction)stylizeTapped:(id)_ {
     [self interpretMessageInTextField];
     [self.tableView reloadData];
 }
@@ -83,106 +83,21 @@ static NSString *kBig = @"??";
 //MARK: Business logic
 -(void)interpretMessageInTextField {
     
-    NSString *input = [NSString stringWithFormat:@"%@",self.textField.text];
+    NSString *input = [NSString stringWithFormat:@"%@",self.inputTextField.text];
     
-    if (input.length == 0)
-        return;
+    if (input.length == 0) return;
     
     [self clearTextField];
     
-    NSAttributedString *formattedString = [self getFormattedStringFromEncryptedString:input];
+    NSAttributedString *formattedString = [input getStyledStringFromEncryptedString];
     
     [self.stringsToDisplay addObject:formattedString];
 }
 
 //MARK: Helpers
 -(void)clearTextField {
-    self.textField.text = @"";
+    self.inputTextField.text = @"";
 }
 
--(NSAttributedString*)getFormattedStringFromEncryptedString:(NSString*)input {
-    
-    NSAttributedString *decryptedString = [self checkForKeys:[self styleKeys] inEncryptedString: input];
-    
-    return decryptedString;
-}
-
--(NSAttributedString*)checkForKeys:(NSArray<NSString*>*)keys inEncryptedString:(NSString*)input {
-    
-    NSMutableArray<NSArray*>* rangesToStyle = [NSMutableArray array]; // Initialize array of styles to apply after searching and removing keys from input
-    
-    for (NSString *key in keys) {
-    
-        while ([input containsString:key]) { // Find and remove all duplicates of keys, recording their ranges
-            
-            NSRange firstRange = [input rangeOfString:key]; // Find first key
-            
-            if (firstRange.length == 0) {
-                NSLog(@"INVALID KEY COUNT IN INPUT, ABORTING STYLING");
-                return [[NSAttributedString alloc] initWithString:@"Invalid key count in input!"];
-            }
-            
-            NSMutableArray *otherKeys = [keys mutableCopy]; // Get all other keys
-            [otherKeys removeObject:key]; // By removing current one
-
-            NSUInteger otherKeysFoundBefore = 0, length = firstRange.location; // Count other keys found before current key
-
-            for (NSString *otherKey in otherKeys) {
-                NSRange range = NSMakeRange(0, length); // Search string for all occurrences before current key
-                while (range.location != NSNotFound) {
-                    range = [input rangeOfString:otherKey options:0 range:range];
-                    if (range.location != NSNotFound) {
-                        range = NSMakeRange(range.location + range.length, length - (range.location + range.length));
-                        otherKeysFoundBefore++; // Key found, continue search after current find
-                    }
-                }
-            }
-            
-            input = [input stringByReplacingCharactersInRange:firstRange withString:@""]; // Remove substring with first key
-            
-            NSRange secondRange = [input rangeOfString:key]; // Find second key
-            
-            if (secondRange.length == 0) {
-                NSLog(@"INVALID KEY COUNT IN INPUT, ABORTING STYLING");
-                return [[NSAttributedString alloc] initWithString:@"Invalid key count in input!"];
-            }
-            
-            input = [input stringByReplacingCharactersInRange:secondRange withString:@""]; // Remove substring with second key
-            
-            NSRange styleRange = NSMakeRange(firstRange.location + 2,  secondRange.location - firstRange.location); // Create style range from two key ranges
-            
-            NSUInteger locationWithOtherKeysSubtracted = styleRange.location - 2 - (2*otherKeysFoundBefore); // Find true location to style by ignoring other keys
-            
-            [rangesToStyle addObject: @[@(locationWithOtherKeysSubtracted), @(styleRange.length), key]]; // Add custom range object with key to styling array
-        }
-    }
-    
-    NSMutableAttributedString *stringBuilder = [[NSMutableAttributedString alloc]initWithString:input];
-    for (NSArray *range in rangesToStyle) {
-        NSUInteger location = [range[0] unsignedIntegerValue];
-        NSUInteger length = [range[1] unsignedIntegerValue];
-        NSString *key = [NSString stringWithFormat:@"%@",range[2]];
-        [stringBuilder addAttributes: @{NSFontAttributeName : [self getFontForKey:key]} range: NSMakeRange(location, length)];
-    }
-    
-    return stringBuilder;
-}
-
--(NSArray<NSString*>*)styleKeys {
-    return @[kBold,kItalic,kBig];
-}
-
--(UIFont*)getFontForKey:(NSString*)key {
-    
-    UIFont *style = [UIFont fontWithName:@"Avenir-Heavy" size:18.0]; // Default?
-     
-    if ([key isEqualToString:kBold]) style = [UIFont fontWithName:@"Avenir-Heavy" size:18.0];
-    
-    if ([key isEqualToString:kItalic]) style = [UIFont italicSystemFontOfSize:18.0];
-    
-    if ([key isEqualToString:kBig]) style = [UIFont boldSystemFontOfSize:30.0];
-    
-    return style;
-}
 
 @end
